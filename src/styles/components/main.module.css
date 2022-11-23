@@ -1,0 +1,29 @@
+.mainContainer {
+    background: #686AAC;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .mainTitle {
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: #e8e8ff;
+    font-size: 1.5rem;
+  }
+/*   
+  .headerImage {
+    width: 40%;
+  }
+  
+  @media(max-width: 765px) {
+    .headerImage {
+      width: 100%;
+    }
+  } */
