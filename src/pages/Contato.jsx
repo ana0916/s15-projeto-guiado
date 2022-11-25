@@ -1,14 +1,55 @@
 import { Header } from '../components/Header'
-import homeImg from '../assets/home.svg'
+import contatoImg from '../assets/contato.svg'
 import { Main } from '../components/Main'
-import { Footer } from '../components/Footer'
+
+import { useState } from 'react'
+import styles from '../styles/components/contato.module.css'
 
 export function Contato() {
+  const [nome, setNome] = useState('')
+  const [email, setEmail] = useState('')
+  const [mensagem, setMensagem] = useState('')
+
+  function handleInputValueNome(event) {
+    setNome(event.target.value)
+  }
+
+  function handleInputValueEmail(event) {
+    setEmail(event.target.value)
+  }
+
+  function handleInputValueMensagem(event) {
+    setMensagem(event.target.value)
+  }
+
+  function handleCreateMessage(event) {
+    event.preventDefault()
+    console.log(nome, email, mensagem)
+  }
+
   return (
     <>
-      <Header title="Contato" image={homeImg} />
-      <Main title="Entre em contato comigo pelos links:" contactHref="https://g.dev/anasulli" contactTitle="Google Developers"/>
-      <Footer text="Ana Footer" />
+      <Header title="Chama no contatinho" image={contatoImg} />
+      <div>
+        <form className={styles.form} onSubmit={handleCreateMessage}>
+          <input
+            className={styles.formInput}
+            placeholder="Digite seu nome"
+            onChange={handleInputValueNome}
+          />
+          <input
+            className={styles.formInput}
+            placeholder="Digite seu email"
+            onChange={handleInputValueEmail}
+          />
+          <textarea
+            className={styles.formTextArea}
+            placeholder="Digite sua mensagem"
+            onChange={handleInputValueMensagem}
+          />
+          <button type="submit" className={styles.formButton}>Enviar mensagem</button>
+        </form>
+      </div>
     </>
   )
 }

@@ -6,6 +6,7 @@ import { Inicio } from './pages/Inicio'
 import { Portfolio } from './pages/Portfolio'
 import { Contato } from './pages/Contato'
 import { Sobre } from './pages/Sobre'
+import { Footer } from './components/Footer'
 
 export function ApplicationRoutes (){
     return(
@@ -17,6 +18,7 @@ export function ApplicationRoutes (){
             <Route path="/portfolio" element={<Portfolio />}/>
             <Route path="/contato" element={<Contato />} />
         </Routes>
+        <Footer />
         </BrowserRouter>
     )
 }
